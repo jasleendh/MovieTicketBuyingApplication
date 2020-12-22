@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Modify User</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Modify the Ninja Credentials</h1>
+		<form action="#" th:action="@{/modifyUser}" th:object="${user}">
+			<input type="hidden" th:field="*{userId}" /><br /> FirstName: <input
+				type="text" th:field="*{firstName}" required /><br /> LastName: <input
+				type="text" th:field="*{lastName}" required /><br /> UserName: <input
+				type="text" th:field="*{userName}" required /><br />
+			<div class="submit">
+				<input type="submit" value="Modify">
+			</div>
+		</form>
+		<div class="viewUser">
+			<a th:href="@{/viewUser}"> View Users</a>
+		</div>
+	</div>
+</body>
+</html>

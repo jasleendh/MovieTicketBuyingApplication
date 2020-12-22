@@ -1,0 +1,83 @@
+body {
+	background-image: url("/images/image1.jpg");
+	background-size: cover;
+	text-align: center;
+}
+
+h1, h2, h3 {
+	background: white;
+}
+
+.container {
+	width: 30%;
+	border: 2px solid;;
+	margin: auto;
+	padding-left: 1.5%;
+	padding-right: 1.5%; padding-top : 2%;
+	padding-bottom: 3%;
+	text-align: center;
+	padding-top: 2%;
+	background: white;
+}
+
+.movie-container {
+	width: 1000px;
+}
+
+.user-table {
+	width: 1028px;
+}
+
+input[type=text], input[type=password], input[type=date], select {
+	box-sizing: border-box;
+	margin: 10px 0;
+	padding: 14px 18px;
+	display: inline-block;
+	border: 1px solid #252773;
+	background: white;
+}
+
+input[type=submit] {
+	width: 90px;
+	height: 25px;
+	font-size: 15px;
+}
+
+input[type=number] {
+	font-size: 17px;
+	width: 70px;
+	height: 20px;
+}
+
+label {
+	font-size: 20px;
+	color: black;
+	'
+}
+
+.table {
+	margin: auto;
+}
+
+.smallContainer {
+	border: 2px dotted;
+	width: 10%;
+	margin: auto;
+	padding-left: 1.5%;
+	padding-right: 1.5%;
+	padding-top: 1.5%;
+	padding-top: 1.5%;
+	color: green;
+	background: white;
+}
+
+#do {
+	font-size: 15px;
+	font-family: bold;
+	color: red;
+}
+#know {
+	font-size: 12px;
+	font-family: bold;
+}
+

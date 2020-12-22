@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View User</title>
+</head>
+<body>
+	<div class="container movie-container">
+		<h1>The KONOHA User/Ninja List</h1>
+		<div class="userTable">
+			<table border="1">
+				<tr>
+					<th>User_ID</th>
+					<th>FIRST_NAME</th>
+					<th>LAST_NAME</th>
+					<th>USER_NAME</th>
+					<th>ENCRYPTED_PASSWORD</th>
+				</tr>
+
+				<tr th:each="user : ${users}">
+					<td th:text="${user.userId}"></td>
+					<td th:text="${user.firstName}"></td>
+					<td th:text="${user.lastName}"></td>
+					<td th:text="${user.userName}"></td>
+					<td th:text="${user.encryptedPassword}"></td>
+					<td><div class="modifyUser">
+							<a th:href="@{/editlink/{id}(id=${user.userId})}">MODIFY</a>
+						</div></td>
+					<td><div class="deleteUser">
+							<a th:href="@{/deletelink/{id}(id=${user.userId})}">DELETE </a>
+						</div></td>
+				</tr>
+			</table>
+			<br>
+		</div>
+		<div class="addUser">
+			<a th:href="@{/addUser}"> Add NINJA</a>
+		</div>
+	</div>
+</body>
+</html>

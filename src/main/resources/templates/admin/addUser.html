@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href="@{/CSS/css.css}" rel="stylesheet" />
+<meta charset="ISO-8859-1">
+<title>New User</title>
+</head>
+<body>
+	<div class="container">
+		<h3>Register New NINJA!</h3>
+		<form action="#" th:action="@{/addUser}" th:object="${user}"
+			method="post">
+			FirstName: <input type="text" name="firstname" required /><br />
+			<br /> LastName: <input type="text" name="lastname" required /><br />
+			<br /> UserName: <input type="text" name="username" required /><br />
+			<br /> Password: <input type="password" name="password" /><br /> <br />
+			<div class="submit">
+				<input type="submit" value="Add ninja"><br />
+			</div>
+		</form>
+		<div class="viewUser">
+			<a th:href="@{/viewUser}"> View Users</a>
+		</div>
+	</div>
+</body>
+</html>

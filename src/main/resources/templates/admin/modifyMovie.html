@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Modify the Movie!</h1>
+		<form action="#" th:action="@{/modifyMovie}" th:object="${movie}">
+			<input type="hidden" th:field="*{MovieId}" /><br /> Movie Title: <input
+				type="text" th:field="*{title}" /><br /> Movie Duration: <input
+				type="text" th:field="*{movieDuration}" /><br /> Language: <input
+				type="text" th:field="*{language}" /><br /> Show Time: <input
+				type="text" th:field="*{showTime}" /><br /> Seats Available: <input
+				type="text" th:field="*{seatsAvailable}" /><br />
+			<div class="submit">
+				<input type="submit" value="Modify">
+			</div>
+		</form>
+		<div class="viewMovie">
+			<a th:href="@{/viewMovies}"> View Movies</a>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+Reciept
+
+
+Movie Name:                  Naruto the movie
+Duration:                         1h 34m
+Language:                       English
+Show Time:                      11:00 am
+Show Date:                      2020-12-30
+Total Number of Seats:   6
+Total Amount:                 56.0

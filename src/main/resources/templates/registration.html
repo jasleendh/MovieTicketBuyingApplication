@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href="@{/CSS/css.css}" rel="stylesheet" />
+<meta charset="ISO-8859-1">
+<title>Create Account</title>
+</head>
+<body>
+<div class="container">
+<h2>Create Account to become a NINJA! :)</h2>
+	<form action="#" th:action="@{/createAccount}" th:object="${user}"
+		method="post">
+		<label for="firstName">FirstName: </label> 
+		<input type="text" name="firstname" placeholder="firstname" required /><br />
+		<label for="lastName">LastName: </label> 
+		<input type="text" name="lastname" placeholder="lastname" required /><br />
+		<label for="userName">Username:</label> 
+		<input type="text" name="username" required placeholder="username"/><br />
+		<label for="password">Password: </label> 
+		<div class="submit">
+		<input type="password" name="password" required placeholder="password" /><br /> <input
+			type="submit" value="Register"><br>
+			</div>
+		<p>
+			Go Back To<a th:href="@{/}">Home Page</a>
+		</p>
+	</form>
+</div>
+</body>
+</html>

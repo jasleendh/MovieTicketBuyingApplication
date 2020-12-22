@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href="@{/CSS.css}" rel="stylesheet" />
+<meta charset="ISO-8859-1">
+<title>Buy ticket</title>
+</head>
+<body>
+	<div class="container">
+		<form th:action="@{/}">
+			<h1>Thank you for your Order!! Hope you enjoy your movie time
+				with us!! :) :)</h1>
+			<div class="receipt">
+				<table>
+					<tr th:each="movie: ${movie}">
+						<table>
+							<tr>
+								<td>Movie Name:</td>
+								<td th:text="${movie.title}"></td>
+							</tr>
+							<tr>
+								<td>Duration:</td>
+								<td th:text="${movie.movieDuration}"></td>
+							</tr>
+							<tr>
+								<td>Language:</td>
+								<td th:text="${movie.language}"></td>
+							</tr>
+							<tr>
+								<td>Show Time:</td>
+								<td th:text="${movie.showTime}"></td>
+							</tr>
+							<tr>
+								<td>Show Date:</td>
+								<td th:text="${date}"></td>
+							</tr>
+							<tr>
+								<td>Categories:</td>
+								<td>
+									<div th:text="${general}"></div>
+									<div th:text="${sheridan}"></div>
+									<div th:text="${prog}"></div>
+									<div th:text="${senior}"></div>
+									<div th:text="${children}"></div>
+								</td>
+
+							</tr>
+							<tr>
+								<td>Total Number of seats:</td>
+								<td th:text="${seats}"></td>
+							</tr>
+							<tr>
+								<td>Total Amount:</td>
+								<td th:text="${amount}"></td>
+							</tr>
+						</table>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

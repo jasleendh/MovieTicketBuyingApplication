@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href="@{/CSS/css.css}" rel="stylesheet" />
+<meta charset="ISO-8859-1">
+<title>View Movies</title>
+</head>
+<body>
+	<div class="table">
+		<form th:action="@{/receipt}" th:object="${ticket}">
+			<div class="container movie-container">
+				<h1>Konnichiwa (Hello) Ninja!!</h1>
+				<br>
+				<h2>The KONOHA Movies List</h2>
+				<br> <br>
+				<table border="1">
+					<tr>
+						<th>MOVIE_ID</th>
+						<th>TITLE</th>
+						<th>MOVIE_DURATION</th>
+						<th>LANGUAGE</th>
+						<th>SHOW_TIME</th>
+						<th>SEATS_AVAILABLE</th>
+					</tr>
+
+					<tr th:each="movie : ${movies}">
+						<td th:text="${movie.movieId}"></td>
+						<td th:text="${movie.title}"></td>
+						<td th:text="${movie.movieDuration}"></td>
+						<td th:text="${movie.language}"></td>
+						<td th:text="${movie.showTime}"></td>
+						<td th:text="${movie.seatsAvailable}"></td>
+					</tr>
+				</table>
+				<br />
+			</div>
+			<div class="container">
+				<br> <br>
+				<h2>Enter the ticket information</h2>
+				<br /> <br /> <label>Select a Movie Ticket</label> <select
+					name="movie" required>
+					<option>-- select --</option>
+					<option th:each="movie : ${movies}" th:text="${movie.title}"
+						th:name="${movie.movieId}" th:value="${movie.movieId}" />
+				</select> <br /> <br /> <label>Select Date of Booking</label> <input
+					type="date" th:name="date" min="2010-01-01" max="2020-12-31"
+					required> <br /> <br />
+				<table>
+					<tr>
+						<th>Category</th>
+						<th>Price</th>
+						<th>Select</th>
+						<th>Enter number of Tickets</th>
+					</tr>
+					<tr>
+						<td>General Admission</td>
+						<td>$15.00</td>
+						<td><input type="checkbox" name="generalAdmission"
+							th:value="1"></td>
+						<td><input type="number" name="generalSeats"
+							value="generalSeats" placeholder="0"></td>
+					</tr>
+					<tr>
+						<td>Sheridan College Student</td>
+						<td>$10.00</td>
+						<td><input type="checkbox" name="sheridanStudent"
+							th:value="1"></td>
+						<td><input type="number" name="sheridanStudentSeats"
+							value="sheridanStudentSeats" placeholder="0"></td>
+					</tr>
+					<tr>
+						<td>PROG 32758 Student</td>
+						<td>$8.00</td>
+						<td><input type="checkbox" name="prog32758" th:value="1">
+						</td>
+						<td><input type="number" name="prog32758Seats"
+							value="prog32758Seats" placeholder="0"></td>
+					</tr>
+					<tr>
+						<td>Senior Citizen</td>
+						<td>$5.00</td>
+						<td><input type="checkbox" name="seniorCitizen" th:value="1"></td>
+						<td><input type="number" name="seniorCitizenSeats"
+							value="seniorSeats" placeholder="0"></td>
+					</tr>
+					<tr>
+						<td>Children</td>
+						<td>$5.00</td>
+						<td><input type="checkbox" name="children" th:value="1">
+						</td>
+						<td><input type="number" name="childrenSeats"
+							value="childrenSeats" placeholder="0"></td>
+						<br>
+					</tr>
+				</table>
+				<div class="submit">
+					<input type="submit" value="Order Ticket"><br>
+					<br>
+				</div>
+				<a th:href="@{/}">Go Back To Home Page</a> <a th:href="@{/logout}">Logout</a>
+			</div>
+		</form>
+	</div>
+
+
+
+	<div class="smallContainer">
+		<p id="do">DO YOU KNOW?</p>
+		<p id="know">All the users of Leaf Village are called NINJAS. The
+			new users are rewarded with a leaf village headband and bracelet.</p>
+	</div>
+</body>
+</html>
